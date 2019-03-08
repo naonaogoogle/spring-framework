@@ -25,10 +25,12 @@ import org.springframework.lang.Nullable;
  * A BeanDefinition describes a bean instance, which has property values,
  * constructor argument values, and further information supplied by
  * concrete implementations.
+ * 一个BeanDefinition 描述了bean实例,他有属性的值,构造器的参数值,实现这个接口获取更多的信息.
  *
  * <p>This is just a minimal interface: The main intention is to allow a
  * {@link BeanFactoryPostProcessor} to introspect and modify property values
  * and other bean metadata.
+ * 这个最小的接口(顶层接口),主要目的是允许BeanFactoryPostProcessor反思和修改属性值和其他的Bean的元信息.
  *
  * @author Juergen Hoeller
  * @author Rob Harrop
@@ -43,10 +45,13 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	 * Scope identifier for the standard singleton scope: "singleton".
 	 * <p>Note that extended bean factories might support further scopes.
 	 * @see #setScope
+	 * Bean范围标识符,单例.
+	 * 记住扩展Bean工厂可能支持更多的Bean范围.
 	 */
 	String SCOPE_SINGLETON = ConfigurableBeanFactory.SCOPE_SINGLETON;
 
 	/**
+	 * 多例
 	 * Scope identifier for the standard prototype scope: "prototype".
 	 * <p>Note that extended bean factories might support further scopes.
 	 * @see #setScope
@@ -57,6 +62,7 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	/**
 	 * Role hint indicating that a {@code BeanDefinition} is a major part
 	 * of the application. Typically corresponds to a user-defined bean.
+	 * 角色暗示指示一个BeanDefinition 是应用的主要角色. 主要反映了一个用户定义的Bean.
 	 */
 	int ROLE_APPLICATION = 0;
 
@@ -84,11 +90,13 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 
 	/**
 	 * Set the name of the parent definition of this bean definition, if any.
+	 * 设置父类bean定义的名字如果有的话.
 	 */
 	void setParentName(@Nullable String parentName);
 
 	/**
 	 * Return the name of the parent definition of this bean definition, if any.
+	 * 返回父类定义信息的名字
 	 */
 	@Nullable
 	String getParentName();
