@@ -30,7 +30,7 @@ import org.springframework.lang.Nullable;
  * preload all their bean definitions (such as XML-based factories) may implement
  * this interface.
  *
- * <p>If this is a {@link HierarchicalBeanFactory}, the return values will <i>not</i>
+ * <p>If this is a {@link HierarchicalBeanFactory}(分级bean工厂), the return values will <i>not</i>
  * take any BeanFactory hierarchy into account, but will relate only to the beans
  * defined in the current factory. Use the {@link BeanFactoryUtils} helper class
  * to consider beans in ancestor factories too.

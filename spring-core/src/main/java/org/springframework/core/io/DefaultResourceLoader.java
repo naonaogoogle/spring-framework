@@ -100,6 +100,7 @@ public class DefaultResourceLoader implements ResourceLoader {
 	/**
 	 * Register the given resolver with this resource loader, allowing for
 	 * additional protocols to be handled.
+	 * 注册新的资源处理器.
 	 * <p>Any such resolver will be invoked ahead of this loader's standard
 	 * resolution rules. It may therefore also override any default rules.
 	 * @since 4.3
@@ -140,21 +141,31 @@ public class DefaultResourceLoader implements ResourceLoader {
 	}
 
 
+	/**
+	 * ResourceLoader 中最核心的方法为 #getResource(String location) ，
+	 * 它根据提供的 location 返回相应的 Resource 。
+	 * 而 DefaultResourceLoader 对该方法提供了核心实现（因为，它的两个子类都没有提供覆盖该方法，所以可以断定 ResourceLoader 的资源加载策略就封装在 DefaultResourceLoader 中)
+	 * @param location the resource location
+	 * @return
+	 */
 	@Override
 	public Resource getResource(String location) {
 		Assert.notNull(location, "Location must not be null");
 
+		// 通过 ProtocolResolver 来加载资源.没有默认实现.这是spring的一个扩展点,用户自己写ProtocolResolver的实现类.
 		for (ProtocolResolver protocolResolver : this.protocolResolvers) {
 			Resource resource = protocolResolver.resolve(location, this);
 			if (resource != null) {
 				return resource;
 			}
 		}
-
+		//返回ClassPathContextResource资源.
 		if (location.startsWith("/")) {
 			return getResourceByPath(location);
 		}
+		//如果是classpath:开头的资源.
 		else if (location.startsWith(CLASSPATH_URL_PREFIX)) {
+			//返回ClassPathResource类型的资源
 			return new ClassPathResource(location.substring(CLASSPATH_URL_PREFIX.length()), getClassLoader());
 		}
 		else {

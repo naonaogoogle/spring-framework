@@ -25,6 +25,12 @@ import org.springframework.util.ResourceUtils;
  * is required to provide this functionality, plus extended
  * {@link org.springframework.core.io.support.ResourcePatternResolver} support.
  *
+ * 职能划分清楚。资源的定义和资源的加载应该要有一个清晰的界限；
+ * 统一的抽象。统一的资源定义和资源加载策略。资源加载后要返回统一的抽象给客户端，客户端要对资源进行怎样的处理，应该由抽象资源接口来界定。
+ * ResourceLoader，定义资源加载器，主要应用于根据给定的资源文件地址，返回对应的 Resource 。
+ *
+ *，Resource 定义了统一的资源，资源的加载则由 ResourceLoader 来统一定义。
+ *
  * <p>{@link DefaultResourceLoader} is a standalone implementation that is
  * usable outside an ApplicationContext, also used by {@link ResourceEditor}.
  *
@@ -49,6 +55,7 @@ public interface ResourceLoader {
 	 * Return a Resource handle for the specified resource location.
 	 * <p>The handle should always be a reusable resource descriptor,
 	 * allowing for multiple {@link Resource#getInputStream()} calls.
+	 * 根据所提供资源的路径 location 返回 Resource 实例，但是它不确保该 Resource 一定存在，需要调用 Resource#exist() 方法来判断。
 	 * <p><ul>
 	 * <li>Must support fully qualified URLs, e.g. "file:C:/test.dat".
 	 * <li>Must support classpath pseudo-URLs, e.g. "classpath:test.dat".

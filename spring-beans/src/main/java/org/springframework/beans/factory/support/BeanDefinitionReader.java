@@ -23,11 +23,13 @@ import org.springframework.lang.Nullable;
 
 /**
  * Simple interface for bean definition readers.
- * Specifies load methods with Resource and String location parameters.
+ * Specifies(指定) load methods with Resource and String location parameters.
+ * 指定加载的方法(用资源或者地址)
  *
- * <p>Concrete bean definition readers can of course add additional
+ * <p>Concrete(具体物) bean definition readers can of course add additional
  * load and register methods for bean definitions, specific to
  * their bean definition format.
+ * 具体的实现类当然可以加载和注册方法
  *
  * <p>Note that a bean definition reader does not have to implement
  * this interface. It only serves as suggestion for bean definition
@@ -49,7 +51,7 @@ public interface BeanDefinitionReader {
 	/**
 	 * Return the resource loader to use for resource locations.
 	 * Can be checked for the <b>ResourcePatternResolver</b> interface and cast
-	 * accordingly, for loading multiple resources for a given resource pattern.
+	 * accordingly(因此), for loading multiple resources for a given resource pattern.
 	 * <p>A {@code null} return value suggests that absolute resource loading
 	 * is not available for this bean definition reader.
 	 * <p>This is mainly meant to be used for importing further resources
@@ -84,6 +86,7 @@ public interface BeanDefinitionReader {
 
 	/**
 	 * Load bean definitions from the specified resource.
+	 * 从指定的资源里面加载bean定义
 	 * @param resource the resource descriptor
 	 * @return the number of bean definitions found
 	 * @throws BeanDefinitionStoreException in case of loading or parsing errors
@@ -122,3 +125,4 @@ public interface BeanDefinitionReader {
 	int loadBeanDefinitions(String... locations) throws BeanDefinitionStoreException;
 
 }
+fffffffff

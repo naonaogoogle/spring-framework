@@ -33,6 +33,10 @@ import org.springframework.util.ResourceUtils;
 /**
  * Convenience base class for {@link Resource} implementations,
  * pre-implementing typical behavior.
+ * 为resource接口的默认抽象实现,实现了resource接口中大部分的公共实现,作为 Resource 接口中的重中之重
+ *
+ * 如果我们想要实现自定义的resource,不要实现resource接口,应该继承AbstractResource抽象类,然后根据当前的资源的具体特性覆盖相应的方法即可.
+ *
  *
  * <p>The "exists" method will check whether a File or InputStream can
  * be opened; "isOpen" will always return false; "getURL" and "getFile"

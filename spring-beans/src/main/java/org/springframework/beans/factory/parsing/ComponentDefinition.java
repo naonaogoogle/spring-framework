@@ -21,7 +21,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanReference;
 
 /**
- * Interface that describes the logical view of a set of {@link BeanDefinition BeanDefinitions}
+ * Interface that describes the logical(符合逻辑的) view of a set of {@link BeanDefinition BeanDefinitions}
  * and {@link BeanReference BeanReferences} as presented in some configuration context.
  *
  * <p>With the introduction of {@link org.springframework.beans.factory.xml.NamespaceHandler pluggable custom XML tags},

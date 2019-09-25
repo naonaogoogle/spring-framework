@@ -42,12 +42,12 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 /**
- * Encapsulates a Java {@link java.lang.reflect.Type}, providing access to
+ * Encapsulates(封装) a Java {@link java.lang.reflect.Type}, providing access to
  * {@link #getSuperType() supertypes}, {@link #getInterfaces() interfaces}, and
- * {@link #getGeneric(int...) generic parameters} along with the ability to ultimately
+ * {@link #getGeneric(int...) generic parameters} along with the ability to ultimately(最终)
  * {@link #resolve() resolve} to a {@link java.lang.Class}.
  *
- * <p>{@code ResolvableTypes} may be obtained from {@link #forField(Field) fields},
+ * <p>{@code ResolvableTypes} may be obtained(获得) from {@link #forField(Field) fields},
  * {@link #forMethodParameter(Method, int) method parameters},
  * {@link #forMethodReturnType(Method) method returns} or
  * {@link #forClass(Class) classes}. Most methods on this class will themselves return
@@ -112,7 +112,7 @@ public class ResolvableType implements Serializable {
 	private final VariableResolver variableResolver;
 
 	/**
-	 * The component type for an array or {@code null} if the type should be deduced.
+	 * The component type for an array or {@code null} if the type should be deduced(推导出).
 	 */
 	@Nullable
 	private final ResolvableType componentType;
@@ -134,7 +134,7 @@ public class ResolvableType implements Serializable {
 
 
 	/**
-	 * Private constructor used to create a new {@link ResolvableType} for cache key purposes,
+	 * Private constructor used to create a new {@link ResolvableType} for cache key purposes(目的),
 	 * with no upfront resolution.
 	 */
 	private ResolvableType(

@@ -19,8 +19,8 @@ package org.springframework.core.convert;
 import org.springframework.lang.Nullable;
 
 /**
- * A service interface for type conversion. This is the entry point into the convert system.
- * Call {@link #convert(Object, Class)} to perform a thread-safe type conversion using this system.
+ * A service interface for type conversion(类型转换的服务). This is the entry point into the convert system.(这是转换系统的入口点)
+ * Call {@link #convert(Object, Class)} to perform(执行) a thread-safe type conversion using this system.
  *
  * @author Keith Donald
  * @author Phillip Webb

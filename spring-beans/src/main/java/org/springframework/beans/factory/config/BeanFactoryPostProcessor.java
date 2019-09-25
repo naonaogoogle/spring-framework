@@ -28,7 +28,7 @@ import org.springframework.beans.BeansException;
  * <p>Useful for custom config files targeted at system administrators that
  * override bean properties configured in the application context.
  *
- * <p>See PropertyResourceConfigurer and its concrete implementations
+ * <p>See PropertyResourceConfigurer(属性资源配置器) and its concrete implementations
  * for out-of-the-box solutions that address such configuration needs.
  *
  * <p>A BeanFactoryPostProcessor may interact with and modify bean

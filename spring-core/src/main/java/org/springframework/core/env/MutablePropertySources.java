@@ -27,10 +27,10 @@ import org.springframework.lang.Nullable;
 
 /**
  * The default implementation of the {@link PropertySources} interface.
- * Allows manipulation of contained property sources and provides a constructor
+ * Allows manipulation(操纵) of contained property sources and provides a constructor
  * for copying an existing {@code PropertySources} instance.
  *
- * <p>Where <em>precedence</em> is mentioned in methods such as {@link #addFirst}
+ * <p>Where <em>precedence(优先级)</em> is mentioned in methods such as {@link #addFirst}
  * and {@link #addLast}, this is with regard to the order in which property sources
  * will be searched when resolving a given property with a {@link PropertyResolver}.
  *

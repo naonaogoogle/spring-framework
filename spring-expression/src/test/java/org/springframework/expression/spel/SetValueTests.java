@@ -265,9 +265,6 @@ public class SetValueTests extends AbstractExpressionTests {
 	protected void setValue(String expression, Object value) {
 		try {
 			Expression e = parser.parseExpression(expression);
-			if (e == null) {
-				fail("Parser returned null for expression");
-			}
 			if (DEBUG) {
 				SpelUtilities.printAbstractSyntaxTree(System.out, e);
 			}

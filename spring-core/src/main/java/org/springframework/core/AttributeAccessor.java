@@ -19,8 +19,10 @@ package org.springframework.core;
 import org.springframework.lang.Nullable;
 
 /**
- * Interface defining a generic contract for attaching and accessing metadata
- * to/from arbitrary objects.
+ *
+ * Interface defining a generic contract for attaching(附着) and accessing(获取) metadata
+ * to/from arbitrary(任意的) objects.
+ * 属性访问器 接口定义了一个通用的合约,为了附着和获取任意对象的的源.
  *
  * 属性获取器
  * @author Rob Harrop
@@ -31,8 +33,8 @@ public interface AttributeAccessor {
 	/**
 	 * Set the attribute defined by {@code name} to the supplied {@code value}.
 	 * If {@code value} is {@code null}, the attribute is {@link #removeAttribute removed}.
-	 * <p>In general, users should take care to prevent overlaps with other
-	 * metadata attributes by using fully-qualified names, perhaps using
+	 * <p>In general, users should take care to prevent(防止) overlaps(重叠) with other
+	 * metadata attributes by using fully-qualified(完全指定的) names, perhaps using
 	 * class or package names as prefix.
 	 * @param name the unique attribute key
 	 * @param value the attribute value to be attached

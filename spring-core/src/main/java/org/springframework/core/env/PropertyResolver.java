@@ -19,7 +19,7 @@ package org.springframework.core.env;
 import org.springframework.lang.Nullable;
 
 /**
- * Interface for resolving properties against any underlying source.
+ * Interface for resolving properties against any underlying source.(接口，用于根据任何基础源解析属性。)
  *
  * @author Chris Beams
  * @author Juergen Hoeller
@@ -30,7 +30,7 @@ import org.springframework.lang.Nullable;
 public interface PropertyResolver {
 
 	/**
-	 * Return whether the given property key is available for resolution,
+	 * Return whether the given property key is available for resolution(决议),
 	 * i.e. if the value for the given key is not {@code null}.
 	 */
 	boolean containsProperty(String key);

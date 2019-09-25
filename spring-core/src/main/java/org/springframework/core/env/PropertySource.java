@@ -24,20 +24,20 @@ import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
 
 /**
- * Abstract base class representing a source of name/value property pairs. The underlying
- * {@linkplain #getSource() source object} may be of any type {@code T} that encapsulates
+ * Abstract base class representing a source of name/value property pairs. The underlying(潜在的)
+ * {@linkplain #getSource() source object} may be of any type {@code T} that encapsulates(封装)
  * properties. Examples include {@link java.util.Properties} objects, {@link java.util.Map}
  * objects, {@code ServletContext} and {@code ServletConfig} objects (for access to init
- * parameters). Explore the {@code PropertySource} type hierarchy to see provided
+ * parameters). Explore(探索) the {@code PropertySource} type hierarchy(层次结构) to see provided
  * implementations.
  *
  * <p>{@code PropertySource} objects are not typically used in isolation, but rather
- * through a {@link PropertySources} object, which aggregates property sources and in
- * conjunction with a {@link PropertyResolver} implementation that can perform
- * precedence-based searches across the set of {@code PropertySources}.
+ * through a {@link PropertySources} object, which aggregates(聚合) property sources and in
+ * conjunction(结合) with a {@link PropertyResolver} implementation that can perform
+ * precedence(优先级)-based searches across the set of {@code PropertySources}.
  *
- * <p>{@code PropertySource} identity is determined not based on the content of
- * encapsulated properties, but rather based on the {@link #getName() name} of the
+ * <p>{@code PropertySource} identity(身份) is determined not based on the content of
+ * encapsulated(封装) properties, but rather based on the {@link #getName() name} of the
  * {@code PropertySource} alone. This is useful for manipulating {@code PropertySource}
  * objects when in collection contexts. See operations in {@link MutablePropertySources}
  * as well as the {@link #named(String)} and {@link #toString()} methods for details.
@@ -191,10 +191,10 @@ public abstract class PropertySource<T> {
 
 	/**
 	 * {@code PropertySource} to be used as a placeholder in cases where an actual
-	 * property source cannot be eagerly initialized at application context
+	 * property source cannot be eagerly(急切地) initialized at application context
 	 * creation time.  For example, a {@code ServletContext}-based property source
-	 * must wait until the {@code ServletContext} object is available to its enclosing
-	 * {@code ApplicationContext}.  In such cases, a stub should be used to hold the
+	 * must wait until the {@code ServletContext} object is available to its enclosing(封闭)
+	 * {@code ApplicationContext}.  In such cases, a stub(存根) should be used to hold the
 	 * intended default position/order of the property source, then be replaced
 	 * during context refresh.
 	 * @see org.springframework.context.support.AbstractApplicationContext#initPropertySources()

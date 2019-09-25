@@ -28,7 +28,7 @@ import org.springframework.lang.Nullable;
  * 一个BeanDefinition 描述了bean实例,他有属性的值,构造器的参数值,实现这个接口获取更多的信息.
  *
  * <p>This is just a minimal interface: The main intention is to allow a
- * {@link BeanFactoryPostProcessor} to introspect and modify property values
+ * {@link BeanFactoryPostProcessor} to introspect(反思) and modify(修改) property values
  * and other bean metadata.
  * 这个最小的接口(顶层接口),主要目的是允许BeanFactoryPostProcessor反思和修改属性值和其他的Bean的元信息.
  *
@@ -86,7 +86,7 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	int ROLE_INFRASTRUCTURE = 2;
 
 
-	// Modifiable attributes
+	// Modifiable(可修改的) attributes
 
 	/**
 	 * Set the name of the parent definition of this bean definition, if any.
@@ -104,7 +104,7 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	/**
 	 * Specify the bean class name of this bean definition.
 	 * <p>The class name can be modified during bean factory post-processing,
-	 * typically replacing the original class name with a parsed variant of it.
+	 * typically replacing the original class name with a parsed variant(变体) of it.
 	 * @see #setParentName
 	 * @see #setFactoryBeanName
 	 * @see #setFactoryMethodName
@@ -118,7 +118,7 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	 * Also, this may just be the class that a factory method is called on, or it may
 	 * even be empty in case of a factory bean reference that a method is called on.
 	 * Hence, do <i>not</i> consider this to be the definitive bean type at runtime but
-	 * rather only use it for parsing purposes at the individual bean definition level.
+	 * rather only use it for parsing purposes at the individual(个人) bean definition level.
 	 * @see #getParentName()
 	 * @see #getFactoryBeanName()
 	 * @see #getFactoryMethodName()
@@ -166,9 +166,9 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	String[] getDependsOn();
 
 	/**
-	 * Set whether this bean is a candidate for getting autowired into some other bean.
+	 * Set whether this bean is a candidate(候选人) for getting autowired into some other bean.
 	 * <p>Note that this flag is designed to only affect type-based autowiring.
-	 * It does not affect explicit references by name, which will get resolved even
+	 * It does not affect explicit(明确的) references by name, which will get resolved even
 	 * if the specified bean is not marked as an autowire candidate. As a consequence,
 	 * autowiring by name will nevertheless inject a bean if the name matches.
 	 */

@@ -38,8 +38,8 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 /**
- * Base class for concrete, full-fledged {@link BeanDefinition} classes,
- * factoring out common properties of {@link GenericBeanDefinition},
+ * Base class for concrete, full-fledged(羽翼丰满的) {@link BeanDefinition} classes,
+ * factoring(保理) out common properties of {@link GenericBeanDefinition},
  * {@link RootBeanDefinition}, and {@link ChildBeanDefinition}.
  *
  * <p>The autowire constants match the ones defined in the

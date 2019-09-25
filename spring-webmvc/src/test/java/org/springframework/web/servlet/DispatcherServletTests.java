@@ -125,8 +125,8 @@ public class DispatcherServletTests {
 		MockHttpServletRequest request = new MockHttpServletRequest(getServletContext(), "GET", "/invalid.do");
 		MockHttpServletResponse response = new MockHttpServletResponse();
 		simpleDispatcherServlet.service(request, response);
-		assertTrue("Not forwarded", response.getForwardedUrl() == null);
-		assertTrue("correct error code", response.getStatus() == HttpServletResponse.SC_NOT_FOUND);
+		assertNull("Not forwarded", response.getForwardedUrl());
+		assertEquals("correct error code", response.getStatus(), HttpServletResponse.SC_NOT_FOUND);
 	}
 
 	@Test

@@ -32,7 +32,7 @@ import java.io.InputStream;
  * attachments, for example.
  *
  * @author Juergen Hoeller
- * @since 20.01.2004
+ * @since.01.2004 20
  * @see java.io.InputStream
  * @see Resource
  * @see InputStreamResource
