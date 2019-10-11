@@ -24,8 +24,8 @@ import java.io.Writer;
 import java.util.Properties;
 
 /**
- * Strategy interface for persisting {@code java.util.Properties},
- * allowing for pluggable parsing strategies.
+ * Strategy interface for persisting(坚持) {@code java.util.Properties},
+ * allowing for pluggable(可插入的) parsing strategies.
  *
  * <p>The default implementation is DefaultPropertiesPersister,
  * providing the native parsing of {@code java.util.Properties},

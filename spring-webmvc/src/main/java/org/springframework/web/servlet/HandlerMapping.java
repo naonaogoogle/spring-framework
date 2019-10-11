@@ -23,12 +23,16 @@ import org.springframework.lang.Nullable;
 /**
  * Interface to be implemented by objects that define a mapping between
  * requests and handler objects.
+ * 定义请求与处理器之间的映射关系
+ *
  *
  * <p>This class can be implemented by application developers, although this is not
  * necessary, as {@link org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping}
  * and {@link org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping}
  * are included in the framework. The former is the default if no
  * HandlerMapping bean is registered in the application context.
+ * 这个类可以由开发者自己实现,虽然这并不是必要的,BeanNameUrlHandlerMapping 和 RequestMappingHandlerMapping是框架提供的实现.
+ * 如果用户没有指定,也没有别的 HandlerMapping 注册到应用上下文, BeanNameUrlHandlerMapping是默认的注册到应用上下文.
  *
  * <p>HandlerMapping implementations can support mapped interceptors but do not
  * have to. A handler will always be wrapped in a {@link HandlerExecutionChain}
@@ -36,11 +40,17 @@ import org.springframework.lang.Nullable;
  * The DispatcherServlet will first call each HandlerInterceptor's
  * {@code preHandle} method in the given order, finally invoking the handler
  * itself if all {@code preHandle} methods have returned {@code true}.
+ * HandlerMapping 的实现可以支持 interceptors(拦截器) 但是并不是必须的. 一个处理器将总是被 HandlerExecutionChain 包含着,且可以选择几个 HandlerInterceptor 处理器拦截器实例一起.
+ * 这个分发Servlet处理器将先顺序调用 HandlerInterceptor 的 preHandle 方法,然后调用真正的处理器本身如果所有的 preHandle 方法返回 true.
+ *
  *
  * <p>The ability to parameterize this mapping is a powerful and unusual
  * capability of this MVC framework. For example, it is possible to write
  * a custom mapping based on session state, cookie state or many other
  * variables. No other MVC framework seems to be equally flexible.
+ * 参数化这个映射的能力是这个MVC框架的一个强大而不寻常的功能. 举个雷子,根据session的状态或者其他参数写一个自定义的映射表.
+ * 没有别的MVC框架看起来有这么灵活.
+ *
  *
  * <p>Note: Implementations can implement the {@link org.springframework.core.Ordered}
  * interface to be able to specify a sorting order and thus a priority for getting

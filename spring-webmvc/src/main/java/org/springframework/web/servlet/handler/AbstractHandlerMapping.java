@@ -52,7 +52,7 @@ import org.springframework.web.util.UrlPathHelper;
  * implementations. Supports ordering, a default handler, handler interceptors,
  * including handler interceptors mapped by path patterns.
  *
- * <p>Note: This base class does <i>not</i> support exposure of the
+ * <p>Note: This base class does <i>not</i> support exposure(曝光) of the
  * {@link #PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE}. Support for this attribute
  * is up to concrete subclasses, typically based on request URL mappings.
  *

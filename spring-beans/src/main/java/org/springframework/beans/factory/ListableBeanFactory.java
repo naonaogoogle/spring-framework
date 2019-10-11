@@ -33,7 +33,7 @@ import org.springframework.lang.Nullable;
  * <p>If this is a {@link HierarchicalBeanFactory}(分级bean工厂), the return values will <i>not</i>
  * take any BeanFactory hierarchy into account, but will relate only to the beans
  * defined in the current factory. Use the {@link BeanFactoryUtils} helper class
- * to consider beans in ancestor factories too.
+ * to consider beans in ancestor(祖先) factories too.
  *
  * <p>The methods in this interface will just respect bean definitions of this factory.
  * They will ignore any singleton beans that have been registered by other means like

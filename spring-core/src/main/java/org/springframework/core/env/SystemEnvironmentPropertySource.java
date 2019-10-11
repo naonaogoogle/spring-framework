@@ -24,9 +24,9 @@ import org.springframework.util.Assert;
 /**
  * Specialization of {@link MapPropertySource} designed for use with
  * {@linkplain AbstractEnvironment#getSystemEnvironment() system environment variables}.
- * Compensates for constraints in Bash and other shells that do not allow for variables
- * containing the period character and/or hyphen character; also allows for uppercase
- * variations on property names for more idiomatic shell use.
+ * Compensates(补偿) for constraints(约束) in Bash and other shells that do not allow for variables
+ * containing the period character and/or hyphen(连字符) character; also allows for uppercase
+ * variations(变化) on property names for more idiomatic shell use.
  *
  * <p>For example, a call to {@code getProperty("foo.bar")} will attempt to find a value
  * for the original property or any 'equivalent' property, returning the first found:

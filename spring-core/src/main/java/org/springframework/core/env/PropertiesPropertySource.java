@@ -23,9 +23,9 @@ import java.util.Properties;
  * {@link PropertySource} implementation that extracts properties from a
  * {@link java.util.Properties} object.
  *
- * <p>Note that because a {@code Properties} object is technically an
+ * <p>Note that because a {@code Properties} object is technically(从技术上讲) an
  * {@code <Object, Object>} {@link java.util.Hashtable Hashtable}, one may contain
- * non-{@code String} keys or values. This implementation, however is restricted to
+ * non-{@code String} keys or values. This implementation, however is restricted(限制) to
  * accessing only {@code String}-based keys and values, in the same fashion as
  * {@link Properties#getProperty} and {@link Properties#setProperty}.
  *

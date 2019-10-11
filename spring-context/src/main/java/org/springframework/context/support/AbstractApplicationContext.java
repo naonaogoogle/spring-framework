@@ -84,7 +84,7 @@ import org.springframework.util.ReflectionUtils;
 
 /**
  * Abstract implementation of the {@link org.springframework.context.ApplicationContext}
- * interface. Doesn't mandate the type of storage used for configuration; simply
+ * interface. Doesn't mandate(授权) the type of storage used for configuration; simply
  * implements common context functionality. Uses the Template Method design pattern,
  * requiring concrete subclasses to implement abstract methods.
  *
@@ -98,7 +98,7 @@ import org.springframework.util.ReflectionUtils;
  *
  * <p>A {@link org.springframework.context.MessageSource} may also be supplied
  * as a bean in the context, with the name "messageSource"; otherwise, message
- * resolution is delegated to the parent context. Furthermore, a multicaster
+ * resolution is delegated(委托) to the parent context. Furthermore, a multicaster(多播)
  * for application events can be supplied as an "applicationEventMulticaster" bean
  * of type {@link org.springframework.context.event.ApplicationEventMulticaster}
  * in the context; otherwise, a default multicaster of type
